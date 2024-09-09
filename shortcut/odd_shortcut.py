@@ -1,3 +1,4 @@
+NOT_IS_ODD_SHORTCUT_NUMBER = 0
 class OddShortcutNumber: 
     __isNegativeNumber = False
     __oddBase: int = 1

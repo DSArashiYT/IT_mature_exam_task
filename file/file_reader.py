@@ -1,15 +1,19 @@
+#  === If you want use Error ===
+from sys import path
+path.append("..")
+# === endif ===
+
 from typing import Callable, TypeVar, List
+from errors.errors_func import Errors
 
 T = TypeVar('T')
 
 class FileReader:
+    __errors = Errors()
 
     def __init__(self, path: str, prefix: str|None) -> None:
-        if not isinstance(path, str): 
-            raise TypeError(f"Expected 'path' to be of type str, got {type(path).__name__} instead.")
-        
-        if prefix is not None and not isinstance(prefix, str): 
-            raise TypeError(f"Expected 'prefix' to be of type str, got {type(prefix).__name__} instead.")
+        if not isinstance(path, str): self.__errors.raiseTypeError("path", path, str)
+        if prefix is not None and not isinstance(prefix, str): self.__errors.raiseTypeError("prefix", prefix, str)
 
         self._prefix = prefix
         self._path = path

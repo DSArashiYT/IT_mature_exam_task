@@ -1,7 +1,7 @@
+from unittest import main, TestCase
 from file_reader import FileReader
-import unittest
 
-class FileReaderTest(unittest.TestCase):
+class FileReaderTest(TestCase):
     def setUp(self):
         self.instance = FileReader("../data/skrot.txt", None)
 
@@ -41,4 +41,4 @@ class FileReaderTest(unittest.TestCase):
             FileReader(2, 3)
 
 if __name__ == "__main__":
-    unittest.main()
+    main()

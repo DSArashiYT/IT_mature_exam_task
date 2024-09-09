@@ -1,7 +1,7 @@
 from odd_shortcut import OddShortcutNumber
-import unittest
+from unittest import main, TestCase
 
-class OddShortcutNumberTest(unittest.TestCase):
+class OddShortcutNumberTest(TestCase):
     def setUp(self):
         self.instance = OddShortcutNumber()
     
@@ -39,4 +39,4 @@ class OddShortcutNumberTest(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    unittest.main()
+    main()
